@@ -14,27 +14,9 @@ interface FormData {
 const initial: FormData = { name: '', location: '', doorType: '', phone: '', email: '', message: '' }
 
 const doorOptions = [
-  {
-    value: 'Front Door',
-    label: 'Front Door',
-    tag: 'Our Speciality',
-    description: 'Composite, timber, uPVC — fitted to your home.',
-    tagStyle: 'bg-[#C49A27] text-black',
-  },
-  {
-    value: 'Patio Door',
-    label: 'Patio Door',
-    tag: 'On Request',
-    description: 'Open up your living space with a beautifully fitted patio door.',
-    tagStyle: 'border border-white/30 text-white/50',
-  },
-  {
-    value: 'Sliding Door',
-    label: 'Sliding Door',
-    tag: 'On Request',
-    description: 'Sleek, slim-frame sliding doors for modern homes.',
-    tagStyle: 'border border-white/30 text-white/50',
-  },
+  { value: 'Front Door', label: 'Front Door' },
+  { value: 'Patio Door', label: 'Patio Door' },
+  { value: 'Sliding Door', label: 'Sliding Door' },
 ]
 
 export default function QuoteForm() {
@@ -234,17 +216,13 @@ export default function QuoteForm() {
           <button
             type="button"
             onClick={() => setDoorOpen(!doorOpen)}
-            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left ${
-              doorOpen
-                ? 'bg-[#0a0a0a] border-[#C49A27] text-white'
-                : form.doorType
-                ? 'bg-white border-stone-200 text-stone-900 hover:border-[#C49A27]'
-                : 'bg-white border-stone-200 text-stone-400 hover:border-[#C49A27]'
-            }`}
+            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left bg-white ${
+              doorOpen ? 'border-stone-900' : 'border-stone-200 hover:border-stone-400'
+            } ${form.doorType ? 'text-stone-900' : 'text-stone-400'}`}
           >
             <span>{selectedDoor ? selectedDoor.label : 'Select door type…'}</span>
             <svg
-              className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 ${doorOpen ? 'rotate-180 text-[#C49A27]' : 'text-stone-400'}`}
+              className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 text-stone-400 ${doorOpen ? 'rotate-180' : ''}`}
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -252,40 +230,21 @@ export default function QuoteForm() {
           </button>
 
           {doorOpen && (
-            <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-[#0a0a0a] border border-[#C49A27]/30 shadow-2xl">
+            <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-white border border-stone-200 shadow-md">
               {doorOptions.map((option, i) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => handleSelectDoor(option.value)}
-                  className={`w-full text-left px-5 py-4 transition-colors duration-150 group relative ${
-                    i < doorOptions.length - 1 ? 'border-b border-white/5' : ''
+                  className={`w-full text-left px-4 py-3 text-sm font-body transition-colors duration-150 ${
+                    i < doorOptions.length - 1 ? 'border-b border-stone-100' : ''
                   } ${
                     form.doorType === option.value
-                      ? 'bg-[#C49A27]/10'
-                      : 'hover:bg-white/[0.04]'
+                      ? 'bg-stone-900 text-white'
+                      : 'text-stone-700 hover:bg-stone-50'
                   }`}
                 >
-                  {/* Gold left bar on hover / selected */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-[2px] bg-[#C49A27] transition-opacity duration-150 ${
-                    form.doorType === option.value ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                  }`} />
-
-                  <div className="flex items-start justify-between gap-3 pl-1">
-                    <div>
-                      <p className={`text-sm font-semibold font-body mb-0.5 ${
-                        form.doorType === option.value ? 'text-[#C49A27]' : 'text-white group-hover:text-white'
-                      }`}>
-                        {option.label}
-                      </p>
-                      <p className="text-white/35 text-xs font-body leading-relaxed">
-                        {option.description}
-                      </p>
-                    </div>
-                    <span className={`text-[9px] font-semibold tracking-[0.15em] uppercase px-2 py-0.5 whitespace-nowrap flex-shrink-0 mt-0.5 ${option.tagStyle}`}>
-                      {option.tag}
-                    </span>
-                  </div>
+                  {option.label}
                 </button>
               ))}
             </div>
