@@ -44,7 +44,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3 text-white/40 text-sm font-body">
               <p>contact@thedoorpurveyors.co.uk</p>
-              <p>+44 (0) 000 000 0000</p>
+              <p>+44 7919 965366</p>
               <p>United Kingdom</p>
             </div>
           </div>
