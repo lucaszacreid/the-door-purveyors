@@ -13,10 +13,38 @@ interface FormData {
 
 const initial: FormData = { name: '', location: '', doorType: '', phone: '', email: '', message: '' }
 
+const doorOptions = [
+  {
+    value: 'Front Door',
+    label: 'Front Door',
+    tag: 'Our Speciality',
+    description: 'Composite, timber, uPVC — fitted to your home.',
+    tagStyle: 'bg-[#C49A27] text-black',
+  },
+  {
+    value: 'Patio Door',
+    label: 'Patio Door',
+    tag: 'On Request',
+    description: 'Open up your living space with a beautifully fitted patio door.',
+    tagStyle: 'border border-white/30 text-white/50',
+  },
+  {
+    value: 'Sliding Door',
+    label: 'Sliding Door',
+    tag: 'On Request',
+    description: 'Sleek, slim-frame sliding doors for modern homes.',
+    tagStyle: 'border border-white/30 text-white/50',
+  },
+]
+
 export default function QuoteForm() {
   const [form, setForm] = useState<FormData>(initial)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+
+  // Door type dropdown
+  const [doorOpen, setDoorOpen] = useState(false)
+  const doorRef = useRef<HTMLDivElement>(null)
 
   // Location autocomplete
   const [suggestions, setSuggestions] = useState<string[]>([])
@@ -24,11 +52,14 @@ export default function QuoteForm() {
   const [suggestionsLoading, setSuggestionsLoading] = useState(false)
   const locationWrapperRef = useRef<HTMLDivElement>(null)
 
-  // Close dropdown when clicking outside
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (locationWrapperRef.current && !locationWrapperRef.current.contains(e.target as Node)) {
         setShowSuggestions(false)
+      }
+      if (doorRef.current && !doorRef.current.contains(e.target as Node)) {
+        setDoorOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -49,7 +80,7 @@ export default function QuoteForm() {
       setSuggestions(data.suggestions ?? [])
       setShowSuggestions((data.suggestions ?? []).length > 0)
     } catch {
-      // fail silently — user can still type freely
+      // fail silently
     } finally {
       setSuggestionsLoading(false)
     }
@@ -61,7 +92,7 @@ export default function QuoteForm() {
   }, [form.location, fetchSuggestions])
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
 
   const handleSelectSuggestion = (suggestion: string) => {
@@ -70,8 +101,14 @@ export default function QuoteForm() {
     setShowSuggestions(false)
   }
 
+  const handleSelectDoor = (value: string) => {
+    setForm(prev => ({ ...prev, doorType: value }))
+    setDoorOpen(false)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!form.doorType) return
     setStatus('loading')
     setErrorMsg('')
 
@@ -123,6 +160,8 @@ export default function QuoteForm() {
 
   const labelClass = 'block text-[11px] font-semibold text-stone-400 uppercase tracking-[0.15em] mb-2 font-body'
 
+  const selectedDoor = doorOptions.find(o => o.value === form.doorType)
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -162,7 +201,6 @@ export default function QuoteForm() {
               </div>
             )}
           </div>
-
           {showSuggestions && suggestions.length > 0 && (
             <ul className="absolute z-50 top-full left-0 right-0 mt-1 bg-white border border-stone-200 shadow-lg max-h-56 overflow-auto">
               {suggestions.map((s, i) => (
@@ -186,29 +224,74 @@ export default function QuoteForm() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="doorType" className={labelClass}>Door Type *</label>
-          <div className="relative">
-            <select
-              id="doorType"
-              name="doorType"
-              value={form.doorType}
-              onChange={handleChange}
-              required
-              className={`${inputClass} appearance-none cursor-pointer pr-10`}
+
+        {/* Custom door type dropdown */}
+        <div ref={doorRef} className="relative">
+          <label className={labelClass}>Door Type *</label>
+          {/* Hidden input so native form validation can fire */}
+          <input type="hidden" name="doorType" value={form.doorType} required />
+
+          <button
+            type="button"
+            onClick={() => setDoorOpen(!doorOpen)}
+            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left ${
+              doorOpen
+                ? 'bg-[#0a0a0a] border-[#C49A27] text-white'
+                : form.doorType
+                ? 'bg-white border-stone-200 text-stone-900 hover:border-[#C49A27]'
+                : 'bg-white border-stone-200 text-stone-400 hover:border-[#C49A27]'
+            }`}
+          >
+            <span>{selectedDoor ? selectedDoor.label : 'Select door type…'}</span>
+            <svg
+              className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 ${doorOpen ? 'rotate-180 text-[#C49A27]' : 'text-stone-400'}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
             >
-              <option value="">Select door type…</option>
-              <option value="Front Door">Front Door</option>
-              <option value="Patio Door">Patio Door</option>
-              <option value="Sliding Door">Sliding Door</option>
-            </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-stone-400">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {doorOpen && (
+            <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-[#0a0a0a] border border-[#C49A27]/30 shadow-2xl">
+              {doorOptions.map((option, i) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => handleSelectDoor(option.value)}
+                  className={`w-full text-left px-5 py-4 transition-colors duration-150 group relative ${
+                    i < doorOptions.length - 1 ? 'border-b border-white/5' : ''
+                  } ${
+                    form.doorType === option.value
+                      ? 'bg-[#C49A27]/10'
+                      : 'hover:bg-white/[0.04]'
+                  }`}
+                >
+                  {/* Gold left bar on hover / selected */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-[2px] bg-[#C49A27] transition-opacity duration-150 ${
+                    form.doorType === option.value ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`} />
+
+                  <div className="flex items-start justify-between gap-3 pl-1">
+                    <div>
+                      <p className={`text-sm font-semibold font-body mb-0.5 ${
+                        form.doorType === option.value ? 'text-[#C49A27]' : 'text-white group-hover:text-white'
+                      }`}>
+                        {option.label}
+                      </p>
+                      <p className="text-white/35 text-xs font-body leading-relaxed">
+                        {option.description}
+                      </p>
+                    </div>
+                    <span className={`text-[9px] font-semibold tracking-[0.15em] uppercase px-2 py-0.5 whitespace-nowrap flex-shrink-0 mt-0.5 ${option.tagStyle}`}>
+                      {option.tag}
+                    </span>
+                  </div>
+                </button>
+              ))}
             </div>
-          </div>
+          )}
         </div>
+
         <div>
           <label htmlFor="phone" className={labelClass}>Phone Number *</label>
           <input
@@ -257,7 +340,7 @@ export default function QuoteForm() {
 
       <button
         type="submit"
-        disabled={status === 'loading'}
+        disabled={status === 'loading' || !form.doorType}
         className="w-full bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold py-4 text-sm tracking-wider uppercase transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed font-body"
       >
         {status === 'loading' ? 'Sending…' : 'Enquire Now'}
