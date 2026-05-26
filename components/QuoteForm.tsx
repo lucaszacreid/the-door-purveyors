@@ -281,7 +281,7 @@ export default function QuoteForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className={labelClass}>Message</label>
+        <label htmlFor="message" className={labelClass}>Message <span className="normal-case tracking-normal font-normal">(optional)</span></label>
         <textarea
           id="message"
           name="message"
