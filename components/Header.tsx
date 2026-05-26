@@ -51,7 +51,7 @@ export default function Header() {
             href="#quote"
             className="ml-2 inline-flex items-center gap-2 bg-[#C49A27] hover:bg-[#D4AF37] text-black text-sm font-semibold px-6 py-2.5 tracking-wider uppercase transition-colors duration-200"
           >
-            Get a Quote
+            Enquire Now
           </a>
         </nav>
 
@@ -93,7 +93,7 @@ export default function Header() {
               className="mt-4 text-center bg-[#C49A27] hover:bg-[#D4AF37] text-black text-sm font-semibold py-3 tracking-wider uppercase transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Get a Quote
+              Enquire Now
             </a>
           </nav>
         </div>

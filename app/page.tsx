@@ -26,10 +26,10 @@ export default function Home() {
                 <div className="w-8 h-px bg-[#C49A27]" />
               </div>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4">
-                Get Your Free Quote
+                Enquire Today
               </h2>
               <p className="text-stone-500 text-base md:text-lg max-w-xl mx-auto">
-                Fill in your details and we'll arrange a convenient time to visit — no obligation, no pressure.
+                Fill in your details and we'll be in touch to arrange a convenient time to visit — no obligation, no pressure.
               </p>
             </div>
             <QuoteForm />

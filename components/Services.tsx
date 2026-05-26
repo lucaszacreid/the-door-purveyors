@@ -90,7 +90,7 @@ export default function Services() {
                 href="#quote"
                 className="mt-8 self-start text-[#C49A27] text-xs font-semibold tracking-widest uppercase font-body hover:text-[#D4AF37] transition-colors flex items-center gap-2 group/cta"
               >
-                Request a Quote
+                Enquire Now
                 <svg
                   className="w-3.5 h-3.5 transition-transform duration-200 group-hover/cta:translate-x-1"
                   fill="none"

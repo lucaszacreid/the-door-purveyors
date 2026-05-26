@@ -56,7 +56,7 @@ export default function QuoteForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-heading font-bold text-2xl text-stone-900 mb-3">Request Received</h3>
+        <h3 className="font-heading font-bold text-2xl text-stone-900 mb-3">Enquiry Received</h3>
         <p className="text-stone-500 text-base mb-8 max-w-sm mx-auto font-body">
           Thank you. We&apos;ll be in touch shortly to arrange your free consultation visit.
         </p>
@@ -64,7 +64,7 @@ export default function QuoteForm() {
           onClick={() => setStatus('idle')}
           className="text-[#C49A27] text-sm font-semibold hover:text-[#D4AF37] transition-colors font-body tracking-wide"
         >
-          Submit another request →
+          Submit another enquiry →
         </button>
       </div>
     )
@@ -181,7 +181,7 @@ export default function QuoteForm() {
         disabled={status === 'loading'}
         className="w-full bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold py-4 text-sm tracking-wider uppercase transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed font-body"
       >
-        {status === 'loading' ? 'Sending…' : 'Request Free Quote'}
+        {status === 'loading' ? 'Sending…' : 'Enquire Now'}
       </button>
 
       <p className="text-center text-xs text-stone-400 font-body">
