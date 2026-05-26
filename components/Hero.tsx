@@ -14,32 +14,21 @@ export default function Hero() {
       {/* Gold vertical accent line */}
       <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#C49A27] to-transparent opacity-70" />
 
-      {/* Large faded background word */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 select-none pointer-events-none overflow-hidden">
-        <span
-          className="font-heading font-bold text-[20vw] text-white/[0.025] leading-none tracking-tighter"
-          aria-hidden="true"
-        >
-          DOORS
-        </span>
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-24 w-full">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-10">
             <div className="w-10 h-px bg-[#C49A27]" />
             <span className="text-[#C49A27] text-xs font-semibold tracking-[0.25em] uppercase font-body">
-              UK Door Installation
+              UK Door & Window Installation
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-heading font-bold text-[2.8rem] md:text-6xl lg:text-7xl text-white leading-[1.06] tracking-tight mb-6">
-            The UK&apos;s<br />
-            All-In-One<br />
-            <span className="text-[#C49A27]">Door Installation</span><br />
-            Service.
+          <h1 className="font-heading font-bold text-[2.6rem] md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight mb-6">
+            Doors & Windows —<br />
+            Measured, Supplied<br />
+            <span className="text-[#C49A27]">and Fitted.</span>
           </h1>
 
           {/* Motto */}
@@ -52,7 +41,7 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-xl font-body">
-            We turn up, measure, present your options, and fit the door. Transparent pricing, professional installation, zero hassle from first contact to final fit.
+            We visit, measure up, show you your options and fit everything to a high standard. Front doors, windows, patio doors and more — one team, start to finish, no hidden costs.
           </p>
 
           {/* CTAs */}

@@ -15,7 +15,7 @@ export default function Footer() {
             <h2 className="font-heading font-bold text-white text-xl mb-3">The Door Purveyors</h2>
             <p className="text-[#C49A27] text-sm italic mb-6 font-body">&ldquo;Doors aren&apos;t just doors.&rdquo;</p>
             <p className="text-white/35 text-sm leading-relaxed font-body">
-              The UK&apos;s all-in-one door installation service. Transparent, seamless, and hassle-free — from first visit to final fit.
+              Doors and windows, supplied and fitted across the UK. Straight pricing, guaranteed work, no fuss.
             </p>
           </div>
 

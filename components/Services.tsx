@@ -1,36 +1,33 @@
 const services = [
   {
-    id: 'front',
-    badge: 'Our Speciality',
+    id: 'doors',
+    badge: 'Most Popular',
     badgeStyle: 'bg-[#C49A27] text-black',
     title: 'Front Doors',
-    subtitle: 'Your home\'s first impression.',
+    subtitle: 'Supply and fit, fully installed.',
     description:
-      'We install a wide range of front doors — composite, timber, uPVC, and more — chosen to complement your home\'s character and meet your security requirements. Every door is measured precisely, fitted perfectly, and finished to the highest standard.',
-    features: ['Composite doors', 'Timber doors', 'uPVC doors', 'Security hardware included'],
-    primary: true,
+      'Composite, timber and uPVC front doors fitted to a high standard. We measure up, help you choose the right door for your home, and fit it properly — including frame, hardware and weatherproofing.',
+    features: ['Composite doors', 'Timber doors', 'uPVC doors', 'All hardware included', 'Draught & weatherproof seal'],
+  },
+  {
+    id: 'windows',
+    badge: 'Available',
+    badgeStyle: 'border border-white/20 text-white/60',
+    title: 'Windows',
+    subtitle: 'Double & triple glazing fitted.',
+    description:
+      'Energy-efficient double and triple glazed windows, supplied and fitted. uPVC, aluminium and timber frames available. We\'ll advise on what suits your property best.',
+    features: ['Double glazing', 'Triple glazing', 'uPVC & aluminium frames', 'A-rated energy efficient', 'Full replacement service'],
   },
   {
     id: 'patio',
     badge: 'On Request',
     badgeStyle: 'border border-white/20 text-white/60',
-    title: 'Patio Doors',
-    subtitle: 'Open up your living space.',
+    title: 'Patio & Sliding Doors',
+    subtitle: 'French, bi-fold and sliding.',
     description:
-      'Beautifully fitted patio doors that bring the outside in and transform the feel of any room. Contact us to discuss your project.',
-    features: ['French patio doors', 'Bi-fold options', 'Energy efficient glazing'],
-    primary: false,
-  },
-  {
-    id: 'sliding',
-    badge: 'On Request',
-    badgeStyle: 'border border-white/20 text-white/60',
-    title: 'Sliding Doors',
-    subtitle: 'Sleek, space-saving elegance.',
-    description:
-      'Slim-frame sliding doors for modern homes where clean lines and maximised light are the priority. Contact us to discuss your project.',
-    features: ['Slim aluminium frames', 'Floor-to-ceiling glass', 'Smooth glide mechanisms'],
-    primary: false,
+      'Patio, bi-fold and sliding doors fitted on request. Get in touch to discuss your project and we\'ll advise on the best option for your space.',
+    features: ['French patio doors', 'Bi-fold doors', 'Sliding doors', 'Aluminium & uPVC frames'],
   },
 ]
 
@@ -43,11 +40,11 @@ export default function Services() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#C49A27]" />
             <span className="text-[#C49A27] text-xs font-semibold tracking-[0.25em] uppercase font-body">
-              What We Do
+              What We Install
             </span>
           </div>
           <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white">
-            Every Door, Done Right.
+            Doors & Windows, Done Properly.
           </h2>
         </div>
 
@@ -56,17 +53,13 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`relative flex flex-col p-8 lg:p-10 bg-[#080808] group transition-colors duration-300 hover:bg-[#0f0f0f] ${
-                service.primary ? 'md:col-span-1' : ''
-              }`}
+              className="relative flex flex-col p-8 lg:p-10 bg-[#080808] group transition-colors duration-300 hover:bg-[#0f0f0f]"
             >
               {/* Gold top border on hover */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#C49A27] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
               {/* Badge */}
-              <span
-                className={`self-start text-[10px] font-semibold tracking-[0.2em] uppercase px-3 py-1 mb-8 font-body ${service.badgeStyle}`}
-              >
+              <span className={`self-start text-[10px] font-semibold tracking-[0.2em] uppercase px-3 py-1 mb-8 font-body ${service.badgeStyle}`}>
                 {service.badge}
               </span>
 
@@ -93,10 +86,7 @@ export default function Services() {
                 Enquire Now
                 <svg
                   className="w-3.5 h-3.5 transition-transform duration-200 group-hover/cta:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
