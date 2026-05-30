@@ -26,7 +26,7 @@ export default function Header() {
       {/* Top bar with phone */}
       <div className="border-b border-white/10 px-6 py-2 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <p className="text-white/50 text-xs font-body">Supply &amp; fit doors across the UK</p>
+          <p className="text-white/50 text-xs font-body">Professional door installation service across the UK</p>
           <a href="tel:+447919965366" className="text-[#C49A27] text-sm font-semibold font-body hover:text-[#D4AF37] transition-colors flex items-center gap-2">
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

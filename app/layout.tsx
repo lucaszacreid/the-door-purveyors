@@ -16,9 +16,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Otago Doors — UK Door Installation',
+  title: 'Otago Doors — Door Installation Service',
   description:
-    "The UK's all-in-one door installation service. We turn up, measure, give you options, and fit your door. Transparent, seamless, hassle-free.",
+    'Otago Doors is a professional door installation service. We visit, measure up, help you choose, and fit your door. Front doors, patio and sliding doors across the UK.',
   keywords: 'door installation, front doors, UK, door fitting, composite doors',
 }
 
