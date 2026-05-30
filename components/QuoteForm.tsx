@@ -15,6 +15,7 @@ const initial: FormData = { name: '', location: '', doorType: '', phone: '', ema
 
 const doorOptions = [
   { value: 'Front Door', label: 'Front Door' },
+  { value: 'Security Door', label: 'Security Door' },
   { value: 'Patio Door', label: 'Patio Door' },
   { value: 'Sliding Door', label: 'Sliding Door' },
 ]
