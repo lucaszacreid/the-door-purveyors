@@ -2,7 +2,7 @@ const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Why Us', href: '#why-us' },
-  { label: 'Enquire Now', href: '#quote' },
+  { label: 'Enquire Now', href: '#enquire' },
 ]
 
 export default function Footer() {

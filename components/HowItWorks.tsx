@@ -1,51 +1,58 @@
 const steps = [
   {
     number: '01',
-    title: 'We Visit',
-    description:
-      'We come to you at a time that suits. We measure up properly, assess what\'s needed and make sure we understand the job before anything else.',
+    title: 'Get in Touch',
+    description: 'Call us or fill in the enquiry form. Tell us what you\'re looking for and we\'ll get back to you quickly to arrange a visit.',
   },
   {
     number: '02',
-    title: 'You Choose',
-    description:
-      'We show you the options that work for your home and your budget — doors, windows, frames, glazing. No pushy sales, just straight advice.',
+    title: 'Free Home Survey',
+    description: 'We come to your property, measure up properly and assess the job. This is completely free and there\'s no obligation to go ahead.',
   },
   {
     number: '03',
-    title: 'We Fit',
-    description:
-      'Our fitters handle everything from start to finish. We remove the old, fit the new, and leave the place clean and tidy — job done.',
+    title: 'Choose Your Products',
+    description: 'We show you the options that fit your home and budget — styles, materials, glazing, hardware. We\'ll give you straightforward advice on what works best.',
+  },
+  {
+    number: '04',
+    title: 'We Supply Everything',
+    description: 'Once you\'re happy, we order and supply all the products. You don\'t need to source anything yourself — we handle it all.',
+  },
+  {
+    number: '05',
+    title: 'Professional Installation',
+    description: 'Our team fits everything to a high standard. We remove and dispose of your old doors or windows, fit the new ones, and leave everything clean and tidy.',
+  },
+  {
+    number: '06',
+    title: 'Aftercare & Guarantee',
+    description: 'All our work is guaranteed. If anything isn\'t right after we\'ve finished, we\'ll come back and sort it — no arguments, no excuses.',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-28 bg-white">
+    <section id="how-it-works" className="py-20 bg-stone-50">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#C49A27]" />
-            <span className="text-[#C49A27] text-xs font-semibold tracking-[0.25em] uppercase font-body">
-              The Process
-            </span>
-            <div className="w-8 h-px bg-[#C49A27]" />
-          </div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-stone-900">
-            Straightforward, Start to Finish.
+        <div className="mb-12">
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-stone-900 mb-3">
+            From Enquiry to Installation — How It Works
           </h2>
+          <p className="text-stone-500 text-base font-body max-w-2xl">
+            We manage the whole process so you don&apos;t have to. Here&apos;s exactly what happens when you get in touch with us.
+          </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step) => (
-            <div key={step.number} className="relative group">
-              <div className="font-heading font-bold text-7xl md:text-8xl text-[#C49A27]/15 leading-none select-none mb-2 -ml-1 transition-colors duration-300 group-hover:text-[#C49A27]/25">
-                {step.number}
+            <div key={step.number} className="bg-white border border-stone-200 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-stone-900 text-white font-heading font-bold text-xs flex items-center justify-center flex-shrink-0">
+                  {step.number}
+                </div>
+                <h3 className="font-heading font-bold text-stone-900 text-base">{step.title}</h3>
               </div>
-              <div className="w-10 h-[2px] bg-[#C49A27] mb-6 transition-all duration-300 group-hover:w-16" />
-              <h3 className="font-heading font-bold text-xl text-stone-900 mb-4">{step.title}</h3>
               <p className="text-stone-500 text-sm leading-relaxed font-body">{step.description}</p>
             </div>
           ))}

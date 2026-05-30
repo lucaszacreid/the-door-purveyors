@@ -1,74 +1,80 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#080808] flex items-center overflow-hidden">
-      {/* Subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-          backgroundSize: '72px 72px',
-        }}
-      />
+    <section className="bg-stone-900 pt-36 md:pt-44 pb-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      {/* Gold vertical accent line */}
-      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#C49A27] to-transparent opacity-70" />
-
-      <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-24 w-full">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-10 h-px bg-[#C49A27]" />
-            <span className="text-[#C49A27] text-xs font-semibold tracking-[0.25em] uppercase font-body">
-              UK Door & Window Installation
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="font-heading font-bold text-[2.6rem] md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight mb-6">
-            Doors & Windows —<br />
-            Measured, Supplied<br />
-            <span className="text-[#C49A27]">and Fitted.</span>
-          </h1>
-
-          {/* Motto */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-px h-8 bg-[#C49A27]/60" />
-            <p className="text-white/50 text-lg md:text-xl italic font-light font-body">
-              &ldquo;Doors aren&apos;t just doors.&rdquo;
+          {/* Left: main content */}
+          <div>
+            <h1 className="font-heading font-bold text-4xl md:text-5xl text-white leading-tight mb-5">
+              Door &amp; Window Installation —{' '}
+              <span className="text-[#C49A27]">Full Service, Start to Finish</span>
+            </h1>
+            <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8 font-body">
+              We handle everything from your first enquiry right through to a fully fitted and guaranteed installation. No middlemen, no subcontractors — just one team doing the whole job.
             </p>
+
+            <ul className="space-y-3 mb-10">
+              {[
+                'Free home survey included',
+                'Front doors, windows, patio & sliding doors',
+                'Supply and fit — we source everything',
+                'All work fully guaranteed',
+                'Competitive, transparent pricing',
+              ].map(item => (
+                <li key={item} className="flex items-center gap-3 text-white/75 text-sm font-body">
+                  <svg className="w-4 h-4 text-[#C49A27] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#enquire"
+                className="inline-flex items-center justify-center bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-colors duration-200"
+              >
+                Get a Free Survey
+              </a>
+              <a
+                href="tel:+447919965366"
+                className="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white/50 text-white font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-all duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call Us Now
+              </a>
+            </div>
           </div>
 
-          {/* Subtext */}
-          <p className="text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-xl font-body">
-            We visit, measure up, show you your options and fit everything to a high standard. Front doors, windows, patio doors and more — one team, start to finish, no hidden costs.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#quote"
-              className="inline-flex items-center justify-center gap-2 bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-colors duration-200"
-            >
-              Enquire Now
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <a
-              href="#how-it-works"
-              className="inline-flex items-center justify-center border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-all duration-200"
-            >
-              How It Works
-            </a>
+          {/* Right: what's included box */}
+          <div className="bg-white/5 border border-white/10 p-8">
+            <h2 className="font-heading font-bold text-white text-lg mb-6">What&apos;s Included in Our Service</h2>
+            <div className="space-y-5">
+              {[
+                { step: '1', title: 'Free Home Survey', desc: 'We visit, measure up and assess exactly what\'s needed.' },
+                { step: '2', title: 'No-Obligation Quote', desc: 'Clear, itemised pricing — no hidden extras.' },
+                { step: '3', title: 'Product Selection', desc: 'We help you choose the right doors or windows for your home.' },
+                { step: '4', title: 'Supply & Fit', desc: 'We source and fit everything — you don\'t lift a finger.' },
+                { step: '5', title: 'Guaranteed Finish', desc: 'All work is guaranteed. We don\'t leave until it\'s right.' },
+              ].map(item => (
+                <div key={item.step} className="flex gap-4">
+                  <div className="w-7 h-7 bg-[#C49A27] text-black font-heading font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {item.step}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm font-body">{item.title}</p>
+                    <p className="text-white/45 text-xs font-body mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <span className="text-white text-xs tracking-widest uppercase font-body">Scroll</span>
-        <div className="w-px h-10 bg-white animate-pulse" />
       </div>
     </section>
   )
