@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-14 border-b border-white/5">
           {/* Brand */}
           <div>
-            <h2 className="font-heading font-bold text-white text-xl mb-3">The Door Purveyors</h2>
+            <h2 className="font-heading font-bold text-white text-xl mb-3">Otago Doors</h2>
             <p className="text-[#C49A27] text-sm italic mb-6 font-body">&ldquo;Doors aren&apos;t just doors.&rdquo;</p>
             <p className="text-white/35 text-sm leading-relaxed font-body">
               Doors and windows, supplied and fitted across the UK. Straight pricing, guaranteed work, no fuss.
@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs font-body">
-            © {new Date().getFullYear()} The Door Purveyors. All rights reserved.
+            © {new Date().getFullYear()} Otago Doors. All rights reserved.
           </p>
           <a
             href="/admin"

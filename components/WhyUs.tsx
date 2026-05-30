@@ -19,7 +19,7 @@ export default function WhyUs() {
 
           <div>
             <h2 className="font-heading font-bold text-2xl md:text-3xl text-white mb-4">
-              Why Choose The Door Purveyors?
+              Why Choose Otago Doors?
             </h2>
             <p className="text-white/55 text-base font-body leading-relaxed mb-6">
               There are plenty of door and window companies out there. Here&apos;s what makes us different — and why our customers come back and recommend us to their neighbours.

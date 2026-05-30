@@ -39,7 +39,7 @@ export default function Header() {
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-heading font-bold text-lg md:text-xl text-white tracking-wide">
-          The Door Purveyors
+          Otago Doors
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

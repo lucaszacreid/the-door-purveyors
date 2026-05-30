@@ -91,7 +91,7 @@ export default function AdminPage() {
           <div className="mb-10 text-center">
             <div className="w-10 h-px bg-[#C49A27] mx-auto mb-6" />
             <h1 className="font-heading font-bold text-2xl text-white mb-1">Admin Access</h1>
-            <p className="text-white/30 text-sm font-body">The Door Purveyors</p>
+            <p className="text-white/30 text-sm font-body">Otago Doors</p>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
@@ -129,7 +129,7 @@ export default function AdminPage() {
         <div className="flex items-center gap-4">
           <a href="/" className="text-white/20 hover:text-white/40 text-sm transition-colors">←</a>
           <div>
-            <span className="font-heading font-bold text-white text-base">The Door Purveyors</span>
+            <span className="font-heading font-bold text-white text-base">Otago Doors</span>
             <span className="text-white/20 text-sm ml-2">/ Admin</span>
           </div>
         </div>
