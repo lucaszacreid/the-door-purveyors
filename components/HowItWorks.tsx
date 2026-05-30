@@ -22,7 +22,7 @@ const steps = [
   {
     number: '05',
     title: 'Professional Installation',
-    description: 'Our team fits everything to a high standard. We remove and dispose of your old doors or windows, fit the new ones, and leave everything clean and tidy.',
+    description: 'Our team fits everything to a high standard. We remove and dispose of your old door, fit the new one, and leave everything clean and tidy.',
   },
   {
     number: '06',

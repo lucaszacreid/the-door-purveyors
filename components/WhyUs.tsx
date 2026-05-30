@@ -4,9 +4,9 @@ const reasons = [
   { title: 'All work is guaranteed — we come back if anything isn\'t right' },
   { title: 'Fixed, transparent pricing agreed before work starts' },
   { title: 'We supply all products — you don\'t need to source anything' },
-  { title: 'A-rated energy efficient doors and windows available' },
+  { title: 'Energy efficient, thermally rated doors available' },
   { title: 'All installations meet current UK security standards' },
-  { title: 'We remove and dispose of your old doors and windows' },
+  { title: 'We remove and dispose of your old door' },
   { title: 'Clean and tidy — we leave your home as we found it' },
   { title: 'Friendly, straightforward service with no hard sell' },
 ]
@@ -22,7 +22,7 @@ export default function WhyUs() {
               Why Choose Otago Doors?
             </h2>
             <p className="text-white/55 text-base font-body leading-relaxed mb-6">
-              There are plenty of door and window companies out there. Here&apos;s what makes us different — and why our customers come back and recommend us to their neighbours.
+              There are plenty of door companies out there. Here&apos;s what makes us different — and why our customers come back and recommend us to their neighbours.
             </p>
             <a
               href="#enquire"

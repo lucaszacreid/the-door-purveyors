@@ -7,7 +7,7 @@ export default function Hero() {
           {/* Left: main content */}
           <div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl text-white leading-tight mb-5">
-              Door &amp; Window Installation —{' '}
+              Door Installation —{' '}
               <span className="text-[#C49A27]">Full Service, Start to Finish</span>
             </h1>
             <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8 font-body">
@@ -17,7 +17,7 @@ export default function Hero() {
             <ul className="space-y-3 mb-10">
               {[
                 'Free home survey included',
-                'Front doors, windows, patio & sliding doors',
+                'Front doors, patio & sliding doors',
                 'Supply and fit — we source everything',
                 'All work fully guaranteed',
                 'Competitive, transparent pricing',
@@ -57,7 +57,7 @@ export default function Hero() {
               {[
                 { step: '1', title: 'Free Home Survey', desc: 'We visit, measure up and assess exactly what\'s needed.' },
                 { step: '2', title: 'No-Obligation Quote', desc: 'Clear, itemised pricing — no hidden extras.' },
-                { step: '3', title: 'Product Selection', desc: 'We help you choose the right doors or windows for your home.' },
+                { step: '3', title: 'Product Selection', desc: 'We help you choose the right door for your home — style, material and hardware.' },
                 { step: '4', title: 'Supply & Fit', desc: 'We source and fit everything — you don\'t lift a finger.' },
                 { step: '5', title: 'Guaranteed Finish', desc: 'All work is guaranteed. We don\'t leave until it\'s right.' },
               ].map(item => (

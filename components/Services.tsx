@@ -7,13 +7,6 @@ const services = [
     popular: true,
   },
   {
-    id: 'windows',
-    title: 'Windows',
-    description: 'Double and triple glazed windows supplied and fitted. We carry uPVC, aluminium and timber frame options and can replace single or multiple windows in one visit.',
-    features: ['Double glazing', 'Triple glazing', 'uPVC, aluminium & timber frames', 'A-rated energy efficient glass', 'Full frame replacement', 'Old windows removed & disposed of'],
-    popular: false,
-  },
-  {
     id: 'patio',
     title: 'Patio & Sliding Doors',
     description: 'French patio, bi-fold and sliding doors fitted on request. Get in touch to tell us about your project and we\'ll advise on the most practical option for your space.',
@@ -31,7 +24,7 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-stone-500 text-base font-body max-w-2xl">
-            We supply and fit a full range of doors and windows. All products are professionally installed by our own team — no subcontractors.
+            We supply and fit a full range of doors. All products are professionally installed by our own team — no subcontractors.
           </p>
         </div>
 
