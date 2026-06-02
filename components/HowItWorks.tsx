@@ -33,27 +33,27 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-stone-50">
+    <section id="how-it-works" className="py-20 bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
-          <h2 className="font-heading font-bold text-2xl md:text-3xl text-[#3b3a3a] mb-3">
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-white mb-3">
             From Enquiry to Installation — How It Works
           </h2>
-          <p className="text-stone-500 text-base font-body max-w-2xl">
+          <p className="text-white/55 text-base font-body max-w-2xl">
             We manage the whole process so you don&apos;t have to. Here&apos;s exactly what happens when you get in touch with us.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step) => (
-            <div key={step.number} className="bg-white border border-stone-200 p-6">
+            <div key={step.number} className="bg-[#111] border border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-[#3b3a3a] text-white font-heading font-bold text-xs flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 bg-[#f8cf40] text-black font-heading font-bold text-xs flex items-center justify-center flex-shrink-0">
                   {step.number}
                 </div>
-                <h3 className="font-heading font-bold text-[#3b3a3a] text-base">{step.title}</h3>
+                <h3 className="font-heading font-bold text-white text-base">{step.title}</h3>
               </div>
-              <p className="text-stone-500 text-sm leading-relaxed font-body">{step.description}</p>
+              <p className="text-white/55 text-sm leading-relaxed font-body">{step.description}</p>
             </div>
           ))}
         </div>

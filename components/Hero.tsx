@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-[#3b3a3a] pt-36 md:pt-44 pb-16">
+    <section className="bg-black pt-36 md:pt-44 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -8,7 +8,7 @@ export default function Hero() {
           <div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl text-white leading-tight mb-5">
               Door Installation —{' '}
-              <span className="text-[#C49A27]">Full Service, Start to Finish</span>
+              <span className="text-[#f8cf40]">Full Service, Start to Finish</span>
             </h1>
             <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8 font-body">
               We handle everything from your first enquiry right through to a fully fitted and guaranteed installation. No middlemen, no subcontractors — just one team doing the whole job.
@@ -23,7 +23,7 @@ export default function Hero() {
                 'Competitive, transparent pricing',
               ].map(item => (
                 <li key={item} className="flex items-center gap-3 text-white/75 text-sm font-body">
-                  <svg className="w-4 h-4 text-[#C49A27] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4 text-[#f8cf40] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#enquire"
-                className="inline-flex items-center justify-center bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-colors duration-200"
+                className="inline-flex items-center justify-center bg-[#f8cf40] hover:bg-[#e8b830] text-black font-semibold text-sm tracking-wider uppercase px-8 py-4 transition-colors duration-200"
               >
                 Get a Free Survey
               </a>
@@ -62,7 +62,7 @@ export default function Hero() {
                 { step: '5', title: 'Guaranteed Finish', desc: 'All work is guaranteed. We don\'t leave until it\'s right.' },
               ].map(item => (
                 <div key={item.step} className="flex gap-4">
-                  <div className="w-7 h-7 bg-[#C49A27] text-black font-heading font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-7 h-7 bg-[#f8cf40] text-black font-heading font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
                     {item.step}
                   </div>
                   <div>

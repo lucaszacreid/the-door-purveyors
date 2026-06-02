@@ -25,17 +25,14 @@ export default function QuoteForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
-  // Door type dropdown
   const [doorOpen, setDoorOpen] = useState(false)
   const doorRef = useRef<HTMLDivElement>(null)
 
-  // Location autocomplete
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [suggestionsLoading, setSuggestionsLoading] = useState(false)
   const locationWrapperRef = useRef<HTMLDivElement>(null)
 
-  // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (locationWrapperRef.current && !locationWrapperRef.current.contains(e.target as Node)) {
@@ -49,7 +46,6 @@ export default function QuoteForm() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Debounced location lookup
   const fetchSuggestions = useCallback(async (query: string) => {
     if (query.length < 2) {
       setSuggestions([])
@@ -119,18 +115,18 @@ export default function QuoteForm() {
   if (status === 'success') {
     return (
       <div className="text-center py-16">
-        <div className="w-16 h-16 border border-[#C49A27]/40 flex items-center justify-center mx-auto mb-8">
-          <svg className="w-7 h-7 text-[#C49A27]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="w-16 h-16 border border-[#f8cf40]/40 flex items-center justify-center mx-auto mb-8">
+          <svg className="w-7 h-7 text-[#f8cf40]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-heading font-bold text-2xl text-[#3b3a3a] mb-3">Enquiry Received</h3>
-        <p className="text-stone-500 text-base mb-8 max-w-sm mx-auto font-body">
+        <h3 className="font-heading font-bold text-2xl text-white mb-3">Enquiry Received</h3>
+        <p className="text-white/55 text-base mb-8 max-w-sm mx-auto font-body">
           Thank you. We&apos;ll be in touch shortly to arrange your free consultation visit.
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-[#C49A27] text-sm font-semibold hover:text-[#D4AF37] transition-colors font-body tracking-wide"
+          className="text-[#f8cf40] text-sm font-semibold hover:text-[#e8b830] transition-colors font-body tracking-wide"
         >
           Submit another enquiry →
         </button>
@@ -139,9 +135,9 @@ export default function QuoteForm() {
   }
 
   const inputClass =
-    'w-full border border-stone-200 bg-white px-4 py-3 text-[#3b3a3a] text-sm font-body placeholder:text-stone-400 focus:outline-none focus:border-[#C49A27] transition-colors duration-200'
+    'w-full border border-white/15 bg-white/5 px-4 py-3 text-white text-sm font-body placeholder:text-white/30 focus:outline-none focus:border-[#f8cf40] transition-colors duration-200'
 
-  const labelClass = 'block text-[11px] font-semibold text-stone-400 uppercase tracking-[0.15em] mb-2 font-body'
+  const labelClass = 'block text-[11px] font-semibold text-white/40 uppercase tracking-[0.15em] mb-2 font-body'
 
   const selectedDoor = doorOptions.find(o => o.value === form.doorType)
 
@@ -180,20 +176,20 @@ export default function QuoteForm() {
             />
             {suggestionsLoading && (
               <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                <div className="w-3.5 h-3.5 border border-stone-300 border-t-[#C49A27] rounded-full animate-spin" />
+                <div className="w-3.5 h-3.5 border border-white/20 border-t-[#f8cf40] rounded-full animate-spin" />
               </div>
             )}
           </div>
           {showSuggestions && suggestions.length > 0 && (
-            <ul className="absolute z-50 top-full left-0 right-0 mt-1 bg-white border border-stone-200 shadow-lg max-h-56 overflow-auto">
+            <ul className="absolute z-50 top-full left-0 right-0 mt-1 bg-[#111] border border-white/15 shadow-lg max-h-56 overflow-auto">
               {suggestions.map((s, i) => (
                 <li key={i}>
                   <button
                     type="button"
                     onMouseDown={() => handleSelectSuggestion(s)}
-                    className="w-full text-left px-4 py-2.5 text-sm text-stone-700 font-body hover:bg-stone-50 hover:text-[#3b3a3a] transition-colors flex items-center gap-2"
+                    className="w-full text-left px-4 py-2.5 text-sm text-white/70 font-body hover:bg-white/5 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <svg className="w-3 h-3 text-[#C49A27] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-3 h-3 text-[#f8cf40] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
@@ -211,19 +207,18 @@ export default function QuoteForm() {
         {/* Custom door type dropdown */}
         <div ref={doorRef} className="relative">
           <label className={labelClass}>Door Type *</label>
-          {/* Hidden input so native form validation can fire */}
           <input type="hidden" name="doorType" value={form.doorType} required />
 
           <button
             type="button"
             onClick={() => setDoorOpen(!doorOpen)}
-            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left bg-white ${
-              doorOpen ? 'border-[#3b3a3a]' : 'border-stone-200 hover:border-stone-400'
-            } ${form.doorType ? 'text-[#3b3a3a]' : 'text-stone-400'}`}
+            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left bg-white/5 ${
+              doorOpen ? 'border-[#f8cf40]' : 'border-white/15 hover:border-white/35'
+            } ${form.doorType ? 'text-white' : 'text-white/30'}`}
           >
             <span>{selectedDoor ? selectedDoor.label : 'Select door type…'}</span>
             <svg
-              className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 text-stone-400 ${doorOpen ? 'rotate-180' : ''}`}
+              className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 text-white/40 ${doorOpen ? 'rotate-180' : ''}`}
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -231,18 +226,18 @@ export default function QuoteForm() {
           </button>
 
           {doorOpen && (
-            <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-white border border-stone-200 shadow-md">
+            <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-[#111] border border-white/15 shadow-md">
               {doorOptions.map((option, i) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => handleSelectDoor(option.value)}
                   className={`w-full text-left px-4 py-3 text-sm font-body transition-colors duration-150 ${
-                    i < doorOptions.length - 1 ? 'border-b border-stone-100' : ''
+                    i < doorOptions.length - 1 ? 'border-b border-white/10' : ''
                   } ${
                     form.doorType === option.value
-                      ? 'bg-[#3b3a3a] text-white'
-                      : 'text-stone-700 hover:bg-stone-50'
+                      ? 'bg-[#f8cf40] text-black'
+                      : 'text-white/70 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   {option.label}
@@ -295,18 +290,18 @@ export default function QuoteForm() {
       </div>
 
       {status === 'error' && (
-        <p className="text-red-500 text-sm font-body">{errorMsg}</p>
+        <p className="text-red-400 text-sm font-body">{errorMsg}</p>
       )}
 
       <button
         type="submit"
         disabled={status === 'loading' || !form.doorType}
-        className="w-full bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold py-4 text-sm tracking-wider uppercase transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed font-body"
+        className="w-full bg-[#f8cf40] hover:bg-[#e8b830] text-black font-semibold py-4 text-sm tracking-wider uppercase transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed font-body"
       >
         {status === 'loading' ? 'Sending…' : 'Enquire Now'}
       </button>
 
-      <p className="text-center text-xs text-stone-400 font-body">
+      <p className="text-center text-xs text-white/30 font-body">
         No obligation. We&apos;ll contact you to arrange a convenient time.
       </p>
     </form>

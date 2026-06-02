@@ -7,13 +7,13 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3b3a3a] border-t border-white/5">
+    <footer className="bg-black border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-14 border-b border-white/5">
           {/* Brand */}
           <div>
             <h2 className="font-heading font-bold text-white text-xl mb-3">Otago Doors</h2>
-            <p className="text-[#C49A27] text-sm italic mb-6 font-body">&ldquo;Doors aren&apos;t just doors.&rdquo;</p>
+            <p className="text-[#f8cf40] text-sm italic mb-6 font-body">&ldquo;Doors aren&apos;t just doors.&rdquo;</p>
             <p className="text-white/35 text-sm leading-relaxed font-body">
               Professional door installation service across the UK. Straight pricing, guaranteed work, no fuss.
             </p>

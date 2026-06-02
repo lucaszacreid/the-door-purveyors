@@ -18,7 +18,7 @@ function LeadDetail({ label, value, href }: { label: string; value: string; href
     <div>
       <p className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.15em] mb-1">{label}</p>
       {href ? (
-        <a href={href} className="text-sm text-[#C49A27] hover:text-[#D4AF37] transition-colors break-all">
+        <a href={href} className="text-sm text-[#f8cf40] hover:text-[#e8b830] transition-colors break-all">
           {value}
         </a>
       ) : (
@@ -78,18 +78,18 @@ export default function AdminPage() {
 
   if (!initialized) {
     return (
-      <div className="min-h-screen bg-[#3b3a3a] flex items-center justify-center">
-        <div className="w-6 h-6 border-2 border-[#C49A27] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-[#f8cf40] border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-[#3b3a3a] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-black flex items-center justify-center px-6">
         <div className="w-full max-w-sm">
           <div className="mb-10 text-center">
-            <div className="w-10 h-px bg-[#C49A27] mx-auto mb-6" />
+            <div className="w-10 h-px bg-[#f8cf40] mx-auto mb-6" />
             <h1 className="font-heading font-bold text-2xl text-white mb-1">Admin Access</h1>
             <p className="text-white/30 text-sm font-body">Otago Doors</p>
           </div>
@@ -101,13 +101,13 @@ export default function AdminPage() {
               placeholder="Password"
               required
               autoComplete="current-password"
-              className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-[#C49A27] transition-colors"
+              className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-[#f8cf40] transition-colors"
             />
             {loginError && <p className="text-red-400 text-sm font-body">{loginError}</p>}
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#C49A27] hover:bg-[#D4AF37] text-black font-semibold py-3 text-sm tracking-wider uppercase transition-colors disabled:opacity-50 font-body"
+              className="w-full bg-[#f8cf40] hover:bg-[#e8b830] text-black font-semibold py-3 text-sm tracking-wider uppercase transition-colors disabled:opacity-50 font-body"
             >
               {loading ? 'Signing in…' : 'Sign In'}
             </button>
@@ -123,7 +123,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#3b3a3a] font-body">
+    <div className="min-h-screen bg-black font-body">
       {/* Header */}
       <header className="border-b border-white/8 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
@@ -149,7 +149,7 @@ export default function AdminPage() {
           </div>
           <button
             onClick={() => fetchLeads()}
-            className="text-[#C49A27] hover:text-[#D4AF37] text-sm transition-colors flex items-center gap-2"
+            className="text-[#f8cf40] hover:text-[#e8b830] text-sm transition-colors flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -191,7 +191,7 @@ export default function AdminPage() {
                         <td className="text-white font-medium py-4 pr-6 whitespace-nowrap">{lead.name}</td>
                         <td className="text-white/50 py-4 pr-6 whitespace-nowrap">{lead.location}</td>
                         <td className="py-4 pr-6">
-                          <span className="text-[#C49A27] text-[10px] font-semibold px-2.5 py-1 border border-[#C49A27]/30 uppercase tracking-wider whitespace-nowrap">
+                          <span className="text-[#f8cf40] text-[10px] font-semibold px-2.5 py-1 border border-[#f8cf40]/30 uppercase tracking-wider whitespace-nowrap">
                             {lead.doorType}
                           </span>
                         </td>
@@ -222,7 +222,7 @@ export default function AdminPage() {
                       {isExpanded && (
                         <tr key={`${lead.id}-expanded`} className="border-b border-white/5">
                           <td colSpan={7} className="px-0 py-0">
-                            <div className="bg-white/[0.03] border-l-2 border-[#C49A27] mx-0 px-8 py-6">
+                            <div className="bg-white/[0.03] border-l-2 border-[#f8cf40] mx-0 px-8 py-6">
                               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
                                 <LeadDetail label="Full Name" value={lead.name} />
                                 <LeadDetail label="Location" value={lead.location} />
@@ -256,7 +256,7 @@ export default function AdminPage() {
                               <div className="flex items-center gap-4 mt-6 pt-5 border-t border-white/5">
                                 <a
                                   href={`mailto:${lead.email}`}
-                                  className="inline-flex items-center gap-2 bg-[#C49A27] hover:bg-[#D4AF37] text-black text-xs font-semibold px-4 py-2 tracking-wider uppercase transition-colors"
+                                  className="inline-flex items-center gap-2 bg-[#f8cf40] hover:bg-[#e8b830] text-black text-xs font-semibold px-4 py-2 tracking-wider uppercase transition-colors"
                                   onClick={e => e.stopPropagation()}
                                 >
                                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
