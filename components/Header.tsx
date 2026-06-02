@@ -38,8 +38,9 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-logo font-bold text-lg md:text-xl text-[#f8cf40] uppercase tracking-widest">
-          Otago Doors
+        <Link href="/" className="font-logo font-bold text-lg md:text-xl uppercase tracking-widest">
+          <span style={{ WebkitTextStroke: '1.5px #f8cf40', color: 'transparent' }}>Otago</span>
+          <span className="text-[#f8cf40]"> Doors</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
