@@ -20,7 +20,7 @@ export default function Home() {
         <section id="enquire" className="py-20 bg-white border-t border-stone-200">
           <div className="max-w-3xl mx-auto px-6">
             <div className="mb-10">
-              <h2 className="font-heading font-bold text-2xl md:text-3xl text-stone-900 mb-3">
+              <h2 className="font-heading font-bold text-2xl md:text-3xl text-[#3b3a3a] mb-3">
                 Request a Free Home Survey
               </h2>
               <p className="text-stone-500 text-base font-body">

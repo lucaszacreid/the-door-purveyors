@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled || menuOpen ? 'bg-stone-900 shadow-lg' : 'bg-stone-900'
+      scrolled || menuOpen ? 'bg-[#3b3a3a] shadow-lg' : 'bg-[#3b3a3a]'
     }`}>
       {/* Top bar with phone */}
       <div className="border-b border-white/10 px-6 py-2 hidden md:block">
@@ -38,7 +38,7 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-heading font-bold text-lg md:text-xl text-white tracking-wide">
+        <Link href="/" className="font-logo font-bold text-lg md:text-xl text-white tracking-wide">
           Otago Doors
         </Link>
 
@@ -78,7 +78,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 px-6 pb-6 pt-4 bg-stone-900">
+        <div className="md:hidden border-t border-white/10 px-6 pb-6 pt-4 bg-[#3b3a3a]">
           <nav className="flex flex-col gap-1">
             <a href="tel:+447919965366" className="text-[#C49A27] text-sm font-semibold py-3 border-b border-white/5 flex items-center gap-2 font-body">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

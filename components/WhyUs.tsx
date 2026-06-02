@@ -13,7 +13,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-20 bg-stone-900">
+    <section id="why-us" className="py-20 bg-[#3b3a3a]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 

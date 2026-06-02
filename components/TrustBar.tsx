@@ -46,7 +46,7 @@ export default function TrustBar() {
             <div key={item.title} className="flex items-center gap-4 px-6 py-6">
               <div className="text-[#C49A27] flex-shrink-0">{item.icon}</div>
               <div>
-                <p className="font-heading font-bold text-stone-900 text-sm">{item.title}</p>
+                <p className="font-heading font-bold text-[#3b3a3a] text-sm">{item.title}</p>
                 <p className="text-stone-500 text-xs font-body mt-0.5">{item.desc}</p>
               </div>
             </div>

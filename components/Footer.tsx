@@ -7,7 +7,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080808] border-t border-white/5">
+    <footer className="bg-[#3b3a3a] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-14 border-b border-white/5">
           {/* Brand */}

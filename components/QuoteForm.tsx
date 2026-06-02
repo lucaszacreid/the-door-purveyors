@@ -124,7 +124,7 @@ export default function QuoteForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-heading font-bold text-2xl text-stone-900 mb-3">Enquiry Received</h3>
+        <h3 className="font-heading font-bold text-2xl text-[#3b3a3a] mb-3">Enquiry Received</h3>
         <p className="text-stone-500 text-base mb-8 max-w-sm mx-auto font-body">
           Thank you. We&apos;ll be in touch shortly to arrange your free consultation visit.
         </p>
@@ -139,7 +139,7 @@ export default function QuoteForm() {
   }
 
   const inputClass =
-    'w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 text-sm font-body placeholder:text-stone-400 focus:outline-none focus:border-[#C49A27] transition-colors duration-200'
+    'w-full border border-stone-200 bg-white px-4 py-3 text-[#3b3a3a] text-sm font-body placeholder:text-stone-400 focus:outline-none focus:border-[#C49A27] transition-colors duration-200'
 
   const labelClass = 'block text-[11px] font-semibold text-stone-400 uppercase tracking-[0.15em] mb-2 font-body'
 
@@ -191,7 +191,7 @@ export default function QuoteForm() {
                   <button
                     type="button"
                     onMouseDown={() => handleSelectSuggestion(s)}
-                    className="w-full text-left px-4 py-2.5 text-sm text-stone-700 font-body hover:bg-stone-50 hover:text-stone-900 transition-colors flex items-center gap-2"
+                    className="w-full text-left px-4 py-2.5 text-sm text-stone-700 font-body hover:bg-stone-50 hover:text-[#3b3a3a] transition-colors flex items-center gap-2"
                   >
                     <svg className="w-3 h-3 text-[#C49A27] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -218,8 +218,8 @@ export default function QuoteForm() {
             type="button"
             onClick={() => setDoorOpen(!doorOpen)}
             className={`w-full flex items-center justify-between px-4 py-3 text-sm font-body border transition-colors duration-200 text-left bg-white ${
-              doorOpen ? 'border-stone-900' : 'border-stone-200 hover:border-stone-400'
-            } ${form.doorType ? 'text-stone-900' : 'text-stone-400'}`}
+              doorOpen ? 'border-[#3b3a3a]' : 'border-stone-200 hover:border-stone-400'
+            } ${form.doorType ? 'text-[#3b3a3a]' : 'text-stone-400'}`}
           >
             <span>{selectedDoor ? selectedDoor.label : 'Select door type…'}</span>
             <svg
@@ -241,7 +241,7 @@ export default function QuoteForm() {
                     i < doorOptions.length - 1 ? 'border-b border-stone-100' : ''
                   } ${
                     form.doorType === option.value
-                      ? 'bg-stone-900 text-white'
+                      ? 'bg-[#3b3a3a] text-white'
                       : 'text-stone-700 hover:bg-stone-50'
                   }`}
                 >

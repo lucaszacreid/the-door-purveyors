@@ -78,7 +78,7 @@ export default function AdminPage() {
 
   if (!initialized) {
     return (
-      <div className="min-h-screen bg-[#080808] flex items-center justify-center">
+      <div className="min-h-screen bg-[#3b3a3a] flex items-center justify-center">
         <div className="w-6 h-6 border-2 border-[#C49A27] border-t-transparent rounded-full animate-spin" />
       </div>
     )
@@ -86,7 +86,7 @@ export default function AdminPage() {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-[#080808] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#3b3a3a] flex items-center justify-center px-6">
         <div className="w-full max-w-sm">
           <div className="mb-10 text-center">
             <div className="w-10 h-px bg-[#C49A27] mx-auto mb-6" />
@@ -123,7 +123,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#080808] font-body">
+    <div className="min-h-screen bg-[#3b3a3a] font-body">
       {/* Header */}
       <header className="border-b border-white/8 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">

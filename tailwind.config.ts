@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         heading: ['var(--font-montserrat)', 'sans-serif'],
         body: ['var(--font-inter)', 'sans-serif'],
+        logo: ['var(--font-poppins)', 'sans-serif'],
       },
       colors: {
         gold: {

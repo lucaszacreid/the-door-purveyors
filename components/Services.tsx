@@ -30,14 +30,14 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service) => (
-            <div key={service.id} className={`border p-6 flex flex-col ${service.popular ? 'border-stone-900' : 'border-stone-200'}`}>
+            <div key={service.id} className={`border p-6 flex flex-col ${service.popular ? 'border-[#3b3a3a]' : 'border-stone-200'}`}>
               {service.popular && (
-                <span className="self-start text-[10px] font-semibold tracking-[0.15em] uppercase bg-stone-900 text-white px-3 py-1 mb-4 font-body">
+                <span className="self-start text-[10px] font-semibold tracking-[0.15em] uppercase bg-[#3b3a3a] text-white px-3 py-1 mb-4 font-body">
                   Most Enquired
                 </span>
               )}
 
-              <h3 className="font-heading font-bold text-xl text-stone-900 mb-3">{service.title}</h3>
+              <h3 className="font-heading font-bold text-xl text-[#3b3a3a] mb-3">{service.title}</h3>
               <p className="text-stone-500 text-sm leading-relaxed font-body mb-6 flex-grow">{service.description}</p>
 
               <ul className="space-y-2 mb-6 border-t border-stone-100 pt-5">
@@ -53,7 +53,7 @@ export default function Services() {
 
               <a
                 href="#enquire"
-                className="text-center border border-stone-900 hover:bg-stone-900 hover:text-white text-stone-900 text-xs font-semibold tracking-wider uppercase py-3 transition-colors duration-200 font-body"
+                className="text-center border border-[#3b3a3a] hover:bg-[#3b3a3a] hover:text-white text-[#3b3a3a] text-xs font-semibold tracking-wider uppercase py-3 transition-colors duration-200 font-body"
               >
                 Enquire About This Service
               </a>
