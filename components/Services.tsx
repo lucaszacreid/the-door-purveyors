@@ -7,6 +7,13 @@ const services = [
     popular: true,
   },
   {
+    id: 'security',
+    title: 'Security Doors',
+    description: 'Reinforced security doors supplied and fitted for homes and commercial properties. We advise on the right specification for your needs and install to current UK security standards.',
+    features: ['Steel & reinforced composite', 'Multipoint locking systems', 'Anti-drill & anti-snap cylinders', 'Suitable for residential & commercial', 'Meets UK security standards', 'Supply & fit included'],
+    popular: false,
+  },
+  {
     id: 'patio',
     title: 'Patio & Sliding Doors',
     description: 'French patio, bi-fold and sliding doors fitted on request. Get in touch to tell us about your project and we\'ll advise on the most practical option for your space.',
