@@ -55,11 +55,12 @@ export default function Footer() {
           <p className="text-white/20 text-xs font-body">
             © {new Date().getFullYear()} Otago Doors. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="/terms" className="text-white/25 hover:text-white/50 text-xs transition-colors duration-200 font-body">Terms &amp; Conditions</a>
-            <a href="/privacy" className="text-white/25 hover:text-white/50 text-xs transition-colors duration-200 font-body">Privacy Policy</a>
-            <a href="/admin" className="text-white/10 hover:text-white/30 text-xs transition-colors duration-200 font-body">Admin</a>
-          </div>
+          <a
+            href="/admin"
+            className="text-white/10 hover:text-white/30 text-xs transition-colors duration-200 font-body"
+          >
+            Admin
+          </a>
         </div>
       </div>
     </footer>
