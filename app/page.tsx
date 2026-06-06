@@ -17,13 +17,13 @@ export default function Home() {
         <HowItWorks />
         <Services />
         <WhyUs />
-        <section id="enquire" className="py-20 bg-black border-t border-white/10">
+        <section id="enquire" className="py-20 bg-[#f4f1ec] border-t border-[#e8e2d9]">
           <div className="max-w-3xl mx-auto px-6">
             <div className="mb-10">
-              <h2 className="font-heading font-bold text-2xl md:text-3xl text-white mb-3">
+              <h2 className="font-heading font-bold text-2xl md:text-3xl text-[#1e2d3d] mb-3">
                 Request a Free Home Survey
               </h2>
-              <p className="text-white/55 text-base font-body">
+              <p className="text-[#6b7280] text-base font-body">
                 Fill in your details below and we&apos;ll be in touch to arrange a convenient time to visit. No charge, no obligation.
               </p>
             </div>

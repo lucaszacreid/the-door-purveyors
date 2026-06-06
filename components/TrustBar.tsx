@@ -39,15 +39,15 @@ const items = [
 
 export default function TrustBar() {
   return (
-    <section className="bg-[#111] border-b border-white/10">
+    <section className="bg-white border-b border-[#e8e2d9]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#e8e2d9]">
           {items.map(item => (
             <div key={item.title} className="flex items-center gap-4 px-6 py-6">
-              <div className="text-[#f8cf40] flex-shrink-0">{item.icon}</div>
+              <div className="text-[#b07d3a] flex-shrink-0">{item.icon}</div>
               <div>
-                <p className="font-heading font-bold text-white text-sm">{item.title}</p>
-                <p className="text-white/50 text-xs font-body mt-0.5">{item.desc}</p>
+                <p className="font-heading font-bold text-[#1e2d3d] text-sm">{item.title}</p>
+                <p className="text-[#6b7280] text-xs font-body mt-0.5">{item.desc}</p>
               </div>
             </div>
           ))}

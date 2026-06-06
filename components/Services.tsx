@@ -24,33 +24,33 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-[#0d0d0d]">
+    <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
-          <h2 className="font-heading font-bold text-2xl md:text-3xl text-white mb-3">
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-[#1e2d3d] mb-3">
             Our Services
           </h2>
-          <p className="text-white/55 text-base font-body max-w-2xl">
+          <p className="text-[#6b7280] text-base font-body max-w-2xl">
             We supply and fit a full range of doors. All products are professionally installed by our own team — no subcontractors.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service) => (
-            <div key={service.id} className={`border p-6 flex flex-col ${service.popular ? 'border-[#f8cf40]' : 'border-white/10'}`}>
+            <div key={service.id} className={`border p-6 flex flex-col ${service.popular ? 'border-[#1e2d3d]' : 'border-[#e8e2d9]'}`}>
               {service.popular && (
-                <span className="self-start text-[10px] font-semibold tracking-[0.15em] uppercase bg-[#f8cf40] text-black px-3 py-1 mb-4 font-body">
+                <span className="self-start text-[10px] font-semibold tracking-[0.15em] uppercase bg-[#1e2d3d] text-white px-3 py-1 mb-4 font-body">
                   Most Enquired
                 </span>
               )}
 
-              <h3 className="font-heading font-bold text-xl text-white mb-3">{service.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed font-body mb-6 flex-grow">{service.description}</p>
+              <h3 className="font-heading font-bold text-xl text-[#1e2d3d] mb-3">{service.title}</h3>
+              <p className="text-[#6b7280] text-sm leading-relaxed font-body mb-6 flex-grow">{service.description}</p>
 
-              <ul className="space-y-2 mb-6 border-t border-white/10 pt-5">
+              <ul className="space-y-2 mb-6 border-t border-[#e8e2d9] pt-5">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5 text-white/65 text-xs font-body">
-                    <svg className="w-3.5 h-3.5 text-[#f8cf40] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <li key={feature} className="flex items-center gap-2.5 text-[#4a5568] text-xs font-body">
+                    <svg className="w-3.5 h-3.5 text-[#b07d3a] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     {feature}
@@ -60,7 +60,7 @@ export default function Services() {
 
               <a
                 href="#enquire"
-                className="text-center border border-[#f8cf40] hover:bg-[#f8cf40] hover:text-black text-[#f8cf40] text-xs font-semibold tracking-wider uppercase py-3 transition-colors duration-200 font-body"
+                className="text-center border border-[#1e2d3d] hover:bg-[#1e2d3d] hover:text-white text-[#1e2d3d] text-xs font-semibold tracking-wider uppercase py-3 transition-colors duration-200 font-body"
               >
                 Enquire About This Service
               </a>
